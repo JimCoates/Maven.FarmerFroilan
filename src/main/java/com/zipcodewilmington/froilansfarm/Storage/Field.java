@@ -1,14 +1,15 @@
 package com.zipcodewilmington.froilansfarm.Storage;
 
-import com.zipcodewilmington.froilansfarm.Storage.CropRow;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class Field {
+public class Field extends StorageUnit {
 
     List<CropRow> cropRowList = new ArrayList<>();
 
 
-
+    @Override
+    public Integer getSize() {
+        return null;
+    }
 }

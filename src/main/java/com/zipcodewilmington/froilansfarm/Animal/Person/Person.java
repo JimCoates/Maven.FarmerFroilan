@@ -6,6 +6,8 @@ import com.zipcodewilmington.froilansfarm.Utils.NoiseMaker;
 
 public class Person extends Animal implements NoiseMaker {
 
+    String name;
+
 
 
     @Override

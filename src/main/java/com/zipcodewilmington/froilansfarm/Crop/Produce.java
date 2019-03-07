@@ -6,5 +6,5 @@ public interface Produce {
 
     boolean hasBeenFertilized = false;
 
-    public Edible yield();
+    public <T extends Edible> T yield();
 }
