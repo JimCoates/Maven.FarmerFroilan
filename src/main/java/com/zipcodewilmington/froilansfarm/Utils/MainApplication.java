@@ -13,10 +13,6 @@ public class MainApplication {
 
     public static void main(String[] args) {
 
-        ChickenCoop chickenCoop = new ChickenCoop();
-        chickenCoop.addListOfChicken(AnimalFactory.CHICKEN.makeMultipleAnimals(15));
-        System.out.println(chickenCoop.getSize());
-
     }
 
 }

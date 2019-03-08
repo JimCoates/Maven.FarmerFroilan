@@ -3,6 +3,7 @@ package com.zipcodewilmington.froilansfarm.Storage;
 import com.zipcodewilmington.froilansfarm.Animal.Animal;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public abstract class StorageUnit <SomeType> {
@@ -26,6 +27,10 @@ public abstract class StorageUnit <SomeType> {
 
     SomeType get(Integer index){
         return list.get(index);
+    }
+
+    void addList(List<SomeType> someTyepOList){
+        list.addAll(someTyepOList);
     }
 
 }
