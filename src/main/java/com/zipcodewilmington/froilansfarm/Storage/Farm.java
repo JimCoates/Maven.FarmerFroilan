@@ -53,5 +53,15 @@ public class Farm {
                 .collect(Collectors.toList());
     }
 
+    public Integer getFieldList() {
+        return fieldList.size();
+    }
 
+    public Integer getChickenCoopList() {
+        return chickenCoopList.size();
+    }
+
+    public Integer getHorseStableList() {
+        return horseStableList.size();
+    }
 }
