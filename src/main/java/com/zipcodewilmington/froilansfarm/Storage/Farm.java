@@ -27,6 +27,9 @@ public class Farm {
         this.fieldList = setNumberFields(numberFields);
     }
 
+    public Farm() {
+        this(1,3,4);
+    }
 
     public FarmHouse getFarmHouse() {
         return this.farmHouse;
@@ -49,4 +52,6 @@ public class Farm {
                 .limit(numberCoops)
                 .collect(Collectors.toList());
     }
+
+
 }
