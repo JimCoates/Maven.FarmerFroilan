@@ -21,10 +21,12 @@ public class Farmer extends Person implements Botanist,Rider {
     @Override
     public void mount(Rideable object) {
         riding = object;
+        object.setRider(this);
     }
 
     @Override
     public void dismount() {
+        riding.setRider(null);
         riding = null;
     }
 

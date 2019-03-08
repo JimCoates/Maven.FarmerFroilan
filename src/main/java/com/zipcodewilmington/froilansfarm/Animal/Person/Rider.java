@@ -4,7 +4,9 @@ import com.zipcodewilmington.froilansfarm.Utils.Rideable;
 
 public interface Rider {
 
-    public void mount(Rideable object);
+     void mount(Rideable object);
 
-    public void dismount();
+     void dismount();
+
+     <T extends Rideable> T getMount();
 }
