@@ -64,4 +64,10 @@ public class Farm {
     public Integer getHorseStableList() {
         return horseStableList.size();
     }
+
+    public Farm returnThisFarm(){
+        return this;
+    }
+
+    
 }
