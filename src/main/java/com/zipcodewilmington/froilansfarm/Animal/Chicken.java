@@ -29,4 +29,9 @@ public class Chicken extends Animal implements Produce {
     public void fertilize(){
         hasBeenFertilized = true;
     }
+
+    @Override
+    public void sleep() {
+
+    }
 }

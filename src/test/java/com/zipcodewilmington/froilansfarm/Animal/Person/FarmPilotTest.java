@@ -1,39 +1,40 @@
 package com.zipcodewilmington.froilansfarm.Animal.Person;
 
 import com.zipcodewilmington.froilansfarm.Animal.Horse;
-import com.zipcodewilmington.froilansfarm.Utils.Rideable;
 import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class FarmerTest {
-
-    @Test
-    public void plant() {
-    }
+public class FarmPilotTest {
 
     @Test
     public void mount() {
-        Farmer farmer = new Farmer();
+        FarmPilot farmPilot = new FarmPilot();
         Horse horse = new Horse();
-        farmer.mount(horse);
-        Horse mountedHorse = farmer.getMount();
+        farmPilot.mount(horse);
+        Horse mountedHorse = farmPilot.getMount();
         Assert.assertEquals(horse,mountedHorse);
     }
 
     @Test
     public void dismount() {
-        Farmer farmer = new Farmer();
+        FarmPilot farmPilot = new FarmPilot();
         Horse horse = new Horse();
         boolean beforeRide = horse.isExercised();
-        farmer.mount(horse);
-        farmer.getMount().Ride();
+        farmPilot.mount(horse);
+        farmPilot.getMount().Ride();
         boolean afterRide = horse.isExercised();
-        farmer.dismount();
+        farmPilot.dismount();
 
-        Assert.assertNull(farmer.getMount());
+        Assert.assertNull(farmPilot.getMount());
         Assert.assertNotEquals(beforeRide,afterRide);
         Assert.assertNull(horse.getRider());
+    }
+
+
+
+    @Test
+    public void fly() {
     }
 }
