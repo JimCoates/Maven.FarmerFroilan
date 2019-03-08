@@ -33,4 +33,9 @@ public class Farmer extends Person implements Botanist,Rider {
     public <T extends Rideable> T getMount(){
         return (T) riding;
     }
+
+    @Override
+    public void sleep() {
+
+    }
 }

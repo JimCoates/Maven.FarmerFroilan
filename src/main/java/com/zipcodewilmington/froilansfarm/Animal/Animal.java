@@ -5,5 +5,5 @@ import com.zipcodewilmington.froilansfarm.Utils.NoiseMaker;
 
 public abstract class Animal implements NoiseMaker, Eater {
 
-
+public abstract void sleep();
 }

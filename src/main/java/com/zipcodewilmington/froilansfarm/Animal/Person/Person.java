@@ -35,4 +35,9 @@ public class Person extends Animal implements NoiseMaker {
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public void sleep() {
+
+    }
 }

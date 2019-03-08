@@ -39,7 +39,7 @@ public class Horse extends Animal implements Rideable {
         return rider;
     }
 
-    public void endOfDay() {
+    public void sleep() {
         isExercised = false;
     }
 
