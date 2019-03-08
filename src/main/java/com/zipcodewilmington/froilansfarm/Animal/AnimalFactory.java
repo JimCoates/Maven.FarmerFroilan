@@ -6,11 +6,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Supplier;
 
-public enum AnimalFactory {
+public enum AnimalFactory{
 
 
     CHICKEN(Chicken::new),
     HORSE(Horse::new);
+
 
 
 
@@ -29,6 +30,7 @@ public enum AnimalFactory {
         }
         return (List<T>) Arrays.asList(animalArray);
     }
+
 
 
 
