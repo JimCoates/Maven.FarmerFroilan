@@ -4,30 +4,13 @@ import com.zipcodewilmington.froilansfarm.Vehicle.CropDuster;
 import com.zipcodewilmington.froilansfarm.Vehicle.Tractor;
 
 public class FarmBuilder {
-    private FarmHouse farmHouse;
+
     private Integer numberFields;
-    private CropDuster betty;
-    private Tractor tractor;
     private Integer numberStables;
     private Integer numberCoops;
 
-    public FarmBuilder setFarmHouse(FarmHouse farmHouse) {
-        this.farmHouse = farmHouse;
-        return this;
-    }
-
     public FarmBuilder setNumberFields(Integer numberFields) {
         this.numberFields = numberFields;
-        return this;
-    }
-
-    public FarmBuilder setBetty(CropDuster betty) {
-        this.betty = betty;
-        return this;
-    }
-
-    public FarmBuilder setTractor(Tractor tractor) {
-        this.tractor = tractor;
         return this;
     }
 
@@ -42,6 +25,6 @@ public class FarmBuilder {
     }
 
     public Farm createFarm() {
-        return new Farm(farmHouse, numberFields, betty, tractor, numberStables, numberCoops);
+        return new Farm(numberFields, numberStables, numberCoops);
     }
 }

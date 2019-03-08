@@ -5,29 +5,48 @@ import com.zipcodewilmington.froilansfarm.Vehicle.Tractor;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Farm {
+    private final Tractor tractor;
+    private final CropDuster betty;
     private FarmHouse farmHouse;
-    private Integer numberFields;
-    private CropDuster betty;
-    private Tractor tractor;
-    private Integer numberStables;
-    private Integer numberCoops;
+    private List<Field> fieldList;
+    private List<ChickenCoop> chickenCoopList;
+    private List<Stable> horseStableList;
 
 
-    public Farm(FarmHouse farmHouse, Integer numberFields, CropDuster betty, Tractor tractor, Integer numberStables, Integer numberCoops) {
-        this.farmHouse = farmHouse;
-        this.numberFields = numberFields;
-        this.betty = betty;
-        this.tractor = tractor;
-        this.numberStables = numberStables;
-        this.numberCoops = numberCoops;
+    public Farm(Integer numberFields, Integer numberStables, Integer numberCoops) {
+        this.farmHouse = new FarmHouse();
+        this.betty = new CropDuster();
+        this.tractor = new Tractor();
+
+        this.horseStableList = setNumberStables(numberStables);
+        this.chickenCoopList = setNumberCoops(numberCoops);
+        this.fieldList = setNumberFields(numberFields);
     }
 
-    public FarmHouse getFarmHouse(){
+
+    public FarmHouse getFarmHouse() {
         return this.farmHouse;
     }
 
+    private List<Field> setNumberFields(Integer numberFields) {
+        return Stream.generate(Field::new)
+                .limit(numberFields)
+                .collect(Collectors.toList());
+    }
 
+    private List<Stable> setNumberStables(Integer numberStables) {
+        return Stream.generate(Stable::new)
+                .limit(numberStables)
+                .collect(Collectors.toList());
+    }
 
+    private List<ChickenCoop> setNumberCoops(Integer numberCoops) {
+        return Stream.generate(ChickenCoop::new)
+                .limit(numberCoops)
+                .collect(Collectors.toList());
+    }
 }
