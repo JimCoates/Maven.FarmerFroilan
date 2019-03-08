@@ -5,11 +5,6 @@ import com.zipcodewilmington.froilansfarm.Crop.Crop;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CropRow extends StorageUnit {
-    List<Crop> cropList = new ArrayList<>();
+public class CropRow extends StorageUnit <Crop> {
 
-    @Override
-    public Integer getSize() {
-        return null;
-    }
 }

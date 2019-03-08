@@ -3,13 +3,6 @@ package com.zipcodewilmington.froilansfarm.Storage;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Field extends StorageUnit {
+public class Field extends StorageUnit <CropRow> {
 
-    List<CropRow> cropRowList = new ArrayList<>();
-
-
-    @Override
-    public Integer getSize() {
-        return null;
-    }
 }
