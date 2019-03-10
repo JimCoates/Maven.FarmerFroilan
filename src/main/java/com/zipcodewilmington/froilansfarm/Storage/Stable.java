@@ -5,7 +5,6 @@ import com.zipcodewilmington.froilansfarm.Animal.Horse;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Stable {
+public class Stable extends StorageUnit <Horse>{
 
-    List<Horse> horseList = new ArrayList<>();
 }

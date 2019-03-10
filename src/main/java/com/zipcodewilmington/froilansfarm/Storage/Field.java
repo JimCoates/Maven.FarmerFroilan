@@ -1,14 +1,16 @@
 package com.zipcodewilmington.froilansfarm.Storage;
 
-import com.zipcodewilmington.froilansfarm.Storage.CropRow;
-
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-public class Field {
+public class Field extends StorageUnit <CropRow> {
 
-    List<CropRow> cropRowList = new ArrayList<>();
+    List<CropRow> cropRows;
 
-
-
+    public Field(){
+        cropRows = Stream.generate(CropRow::createNewCropRow)
+                .limit(5).collect(Collectors.toList());
+    }
 }

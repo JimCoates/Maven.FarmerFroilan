@@ -1,6 +1,11 @@
 package com.zipcodewilmington.froilansfarm.Utils;
 
+import com.zipcodewilmington.froilansfarm.Animal.AnimalFactory;
+import com.zipcodewilmington.froilansfarm.Animal.Chicken;
+import com.zipcodewilmington.froilansfarm.Animal.Person.FarmPilot;
 import com.zipcodewilmington.froilansfarm.Animal.Person.Farmer;
+import com.zipcodewilmington.froilansfarm.Animal.Person.Person;
+import com.zipcodewilmington.froilansfarm.Storage.ChickenCoop;
 import com.zipcodewilmington.froilansfarm.Storage.Farm;
 
 /**
@@ -9,7 +14,16 @@ import com.zipcodewilmington.froilansfarm.Storage.Farm;
 public class MainApplication {
 
     public static void main(String[] args) {
-        Farmer froilan = new Farmer(new Farm());
+
+        Farm froilansFarm = new Farm();
+        Person froilan = new Farmer();
+        Person froilanda = new FarmPilot();
+        froilansFarm.addPersonToFarmHouse(froilan);
+        froilansFarm.addPersonToFarmHouse(froilanda);
+
+
+
+
     }
 
 }
