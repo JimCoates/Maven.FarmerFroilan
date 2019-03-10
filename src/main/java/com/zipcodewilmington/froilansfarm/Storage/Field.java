@@ -13,4 +13,6 @@ public class Field extends StorageUnit <CropRow> {
         cropRows = Stream.generate(CropRow::createNewCropRow)
                 .limit(5).collect(Collectors.toList());
     }
+
+
 }

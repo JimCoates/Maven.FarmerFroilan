@@ -3,12 +3,14 @@ package com.zipcodewilmington.froilansfarm.Animal.Person;
 import com.zipcodewilmington.froilansfarm.Animal.Animal;
 import com.zipcodewilmington.froilansfarm.Crop.Crop;
 import com.zipcodewilmington.froilansfarm.Crop.Edible;
+import com.zipcodewilmington.froilansfarm.Crop.TomatoPlant;
 import com.zipcodewilmington.froilansfarm.Storage.CropRow;
 import com.zipcodewilmington.froilansfarm.Storage.Farm;
 import com.zipcodewilmington.froilansfarm.Utils.Rideable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Farmer extends Person implements Botanist,Rider {
 
@@ -24,7 +26,8 @@ public class Farmer extends Person implements Botanist,Rider {
     }
 
     @Override
-    public void plant(Crop crop, CropRow cropRow) { //TODO after storage methods are done, complete the logic in this method
+    public void plant() { //TODO after storage methods are done, complete the logic in this method
+
 
     }
 
