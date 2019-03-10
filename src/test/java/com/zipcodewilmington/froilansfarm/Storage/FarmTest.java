@@ -1,7 +1,10 @@
 package com.zipcodewilmington.froilansfarm.Storage;
 
+import com.zipcodewilmington.froilansfarm.Animal.Chicken;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.function.Consumer;
 
 public class FarmTest {
 
@@ -49,17 +52,15 @@ public class FarmTest {
         Assert.assertEquals(expectedStables,actualStables);
     }
 
-    @Test
-    public void findLeastPopulatedChickenCoop() {
-        
-    }
 
-    @Test
-    public void findLeastPopulatedStable() {
-    }
 
     @Test
     public void addManyChicken() {
+        Farm farm = new Farm();
+        farm.addManyChicken(15);
+        for (ChickenCoop thisCoop : farm.getChickenCoopList()) {
+            System.out.println(thisCoop.getSize());
+        }
     }
 
     @Test

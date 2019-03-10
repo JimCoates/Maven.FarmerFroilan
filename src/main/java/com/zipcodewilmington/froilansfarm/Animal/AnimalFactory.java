@@ -10,7 +10,7 @@ public enum AnimalFactory{
 
 
     CHICKEN(Chicken::createChicken),
-    HORSE(Horse::new);
+    HORSE(Horse::createHorse);
 
 
 
