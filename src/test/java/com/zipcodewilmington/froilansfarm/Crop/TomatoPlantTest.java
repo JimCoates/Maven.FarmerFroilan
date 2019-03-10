@@ -1,36 +1,31 @@
 package com.zipcodewilmington.froilansfarm.Crop;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 public class TomatoPlantTest {
 
-    @Test
-    public void addTomatoTest() {
-        TomatoPlant tomatoPlant = new TomatoPlant();
-        Integer before = tomatoPlant.getQuantity();
-        tomatoPlant.yield();
-        Integer after = tomatoPlant.getQuantity();
+    TomatoPlant tplant;
 
-        Assertions.assertTrue(before != after);
-        Assertions.assertTrue(before == 0);
-        Assertions.assertTrue(after == 1);
-
+    @Before
+    public void setup(){
+        tplant = new TomatoPlant();
     }
 
     @Test
-    public void removeTomatoTest() {
-        TomatoPlant tomatoPlant = new TomatoPlant();
-        tomatoPlant.yield();
-        Integer before = tomatoPlant.getQuantity();
-        tomatoPlant.removeTomato();
-        Integer after = tomatoPlant.getQuantity();
-
-        Assertions.assertTrue(before != after);
-        Assertions.assertTrue(before == 1);
-        Assertions.assertTrue(after == 1);
+    public void HarvestTest(){
+        Assert.assertNull(tplant.harvest());
 
     }
+    @Test
+    public void fertilizeTest(){
+        this.tplant.fertilizePlant();
+        Boolean actual = tplant.isFertilized();
 
+        Assert.assertTrue(actual);
+    }
 
 }
