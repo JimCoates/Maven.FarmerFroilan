@@ -4,14 +4,12 @@ import com.zipcodewilmington.froilansfarm.Animal.Horse;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class FarmPilotTest {
 
     @Test
     public void mount() {
         FarmPilot farmPilot = new FarmPilot();
-        Horse horse = new Horse();
+        Horse horse = Horse.createHorse();
         farmPilot.mount(horse);
         Horse mountedHorse = farmPilot.getMount();
         Assert.assertEquals(horse,mountedHorse);
@@ -20,7 +18,7 @@ public class FarmPilotTest {
     @Test
     public void dismount() {
         FarmPilot farmPilot = new FarmPilot();
-        Horse horse = new Horse();
+        Horse horse = Horse.createHorse();
         boolean beforeRide = horse.isExercised();
         farmPilot.mount(horse);
         farmPilot.getMount().Ride();

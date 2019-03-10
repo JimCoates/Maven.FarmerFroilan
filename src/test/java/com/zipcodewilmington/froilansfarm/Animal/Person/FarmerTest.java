@@ -1,11 +1,8 @@
 package com.zipcodewilmington.froilansfarm.Animal.Person;
 
 import com.zipcodewilmington.froilansfarm.Animal.Horse;
-import com.zipcodewilmington.froilansfarm.Utils.Rideable;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class FarmerTest {
 
@@ -16,7 +13,7 @@ public class FarmerTest {
     @Test
     public void mount() {
         Farmer farmer = new Farmer();
-        Horse horse = new Horse();
+        Horse horse = Horse.createHorse();
         farmer.mount(horse);
         Horse mountedHorse = farmer.getMount();
         Assert.assertEquals(horse,mountedHorse);
@@ -25,7 +22,7 @@ public class FarmerTest {
     @Test
     public void dismount() {
         Farmer farmer = new Farmer();
-        Horse horse = new Horse();
+        Horse horse = Horse.createHorse();
         boolean beforeRide = horse.isExercised();
         farmer.mount(horse);
         farmer.getMount().Ride();

@@ -9,7 +9,7 @@ import java.util.function.Supplier;
 public enum AnimalFactory{
 
 
-    CHICKEN(Chicken::new),
+    CHICKEN(Chicken::createChicken),
     HORSE(Horse::new);
 
 
@@ -18,6 +18,8 @@ public enum AnimalFactory{
     private final Supplier<Animal> animalSupplier;
 
     AnimalFactory(Supplier<Animal> supplier) {this.animalSupplier = supplier;}
+
+
 
     public <T extends Animal> T createAnimal(){
         return (T) animalSupplier.get();

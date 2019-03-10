@@ -8,9 +8,14 @@ import com.zipcodewilmington.froilansfarm.Crop.Produce;
 public class Chicken extends Animal implements Produce {
     boolean hasBeenFertilized;
 
-    public Chicken() {
+    private Chicken() {
         this.hasBeenFertilized = false;
     }
+
+    public static Chicken createChicken() {
+        return new Chicken();
+    }
+
 
     public void eat(Edible food) {
         food = null;

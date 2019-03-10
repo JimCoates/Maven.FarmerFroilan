@@ -14,7 +14,7 @@ public class ChickenCoopTest {
     @Test
     public void addChickenTest() {
         this.coop = new ChickenCoop();
-        this.chicken = new Chicken();
+        this.chicken = Chicken.createChicken();
 
         coop.addSingle(chicken);
         Animal expected = chicken;
@@ -27,9 +27,9 @@ public class ChickenCoopTest {
     @Test
     public void getSizeTestCoop() {
         this.coop = new ChickenCoop();
-        this.chicken = new Chicken();
-        Chicken chicken2 = new Chicken();
-        Chicken chicken3 = new Chicken();
+        this.chicken = Chicken.createChicken();
+        Chicken chicken2 = Chicken.createChicken();
+        Chicken chicken3 = Chicken.createChicken();
         Integer expected = 3;
 
         this.coop.addSingle(chicken2);
@@ -44,9 +44,9 @@ public class ChickenCoopTest {
     @Test
     public void removeChickenTest() {
         this.coop = new ChickenCoop();
-        this.chicken = new Chicken();
-        Chicken chicken2 = new Chicken();
-        Chicken chicken3 = new Chicken();
+        this.chicken = Chicken.createChicken();
+        Chicken chicken2 = Chicken.createChicken();
+        Chicken chicken3 = Chicken.createChicken();
         Integer expected = 2;
 
         this.coop.addSingle(chicken2);
@@ -63,9 +63,9 @@ public class ChickenCoopTest {
     @Test
     public void removeAllChickenTest() {
         this.coop = new ChickenCoop();
-        this.chicken = new Chicken();
-        Chicken chicken2 = new Chicken();
-        Chicken chicken3 = new Chicken();
+        this.chicken = Chicken.createChicken();
+        Chicken chicken2 = Chicken.createChicken();
+        Chicken chicken3 = Chicken.createChicken();
         Integer expected = 0;
 
         this.coop.addSingle(chicken2);

@@ -6,5 +6,4 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CropRow extends StorageUnit <Crop> {
-
 }

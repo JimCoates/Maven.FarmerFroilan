@@ -13,6 +13,10 @@ public class MainApplication {
 
     public static void main(String[] args) {
 
+        Farm froilansFarm = new Farm();
+        froilansFarm.addManyChicken(15);
+        froilansFarm.addManyHorse(10);
+
 
     }
 

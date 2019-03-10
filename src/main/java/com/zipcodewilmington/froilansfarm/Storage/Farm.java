@@ -1,10 +1,16 @@
 package com.zipcodewilmington.froilansfarm.Storage;
 
+import com.zipcodewilmington.froilansfarm.Animal.AnimalFactory;
+import com.zipcodewilmington.froilansfarm.Animal.Chicken;
+import com.zipcodewilmington.froilansfarm.Animal.Horse;
 import com.zipcodewilmington.froilansfarm.Vehicle.CropDuster;
 import com.zipcodewilmington.froilansfarm.Vehicle.Tractor;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -53,21 +59,61 @@ public class Farm {
                 .collect(Collectors.toList());
     }
 
-    public Integer getFieldList() {
+    public Integer getNumberOfFields() {
         return fieldList.size();
     }
 
-    public Integer getChickenCoopList() {
+    public Integer getNumberOfCoops() {
         return chickenCoopList.size();
     }
 
-    public Integer getHorseStableList() {
+    public Integer getNumberOfStables() {
         return horseStableList.size();
     }
 
-    public Farm returnThisFarm(){
-        return this;
+    public List<Field> getFieldList() {
+        return fieldList;
     }
 
-    
+    public List<ChickenCoop> getChickenCoopList() {
+        return chickenCoopList;
+    }
+
+    public List<Stable> getHorseStableList() {
+        return horseStableList;
+    }
+
+    public ChickenCoop findLeastPopulatedChickenCoop(){
+        chickenCoopList.sort(StorageUnit::compareTo);
+
+        return chickenCoopList.get(0);
+    }
+
+    public Stable findLeastPopulatedStable(){
+        horseStableList.sort(StorageUnit::compareTo);
+
+        return horseStableList.get(0);
+    }
+
+
+    public void addManyChicken(Integer numberOfChicken){//TODO - limit amount to fit max number of chicken allowed in coop
+
+        Stream.generate(Chicken::createChicken).limit(numberOfChicken)
+                .forEach(chicken -> findLeastPopulatedChickenCoop().addSingle(chicken));
+
+        }
+
+
+    public void addManyHorse(Integer numberOfChicken){
+
+        Stream.generate(Horse::createHorse).limit(numberOfChicken)
+                .forEach(horse -> findLeastPopulatedStable().addSingle(horse));
+
+    }
+
 }
+
+
+
+
+

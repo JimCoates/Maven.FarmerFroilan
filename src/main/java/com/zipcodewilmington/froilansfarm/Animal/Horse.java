@@ -10,8 +10,12 @@ public class Horse extends Animal implements Rideable {
     private Rider rider;
     private boolean isExercised;
 
-    public Horse() {
+    private Horse() {
         isExercised = false;
+    }
+
+    public static Horse createHorse() {
+        return new Horse();
     }
 
     public void eat(Edible food) {

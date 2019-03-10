@@ -1,12 +1,9 @@
 package com.zipcodewilmington.froilansfarm.Storage;
 
-import com.zipcodewilmington.froilansfarm.Animal.Animal;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public abstract class StorageUnit <SomeType> {
+public abstract class StorageUnit <SomeType> implements Comparable {
     List<SomeType> list = new ArrayList<>();
 
     Integer getSize(){
@@ -32,5 +29,13 @@ public abstract class StorageUnit <SomeType> {
     void addList(List<SomeType> someTyepOList){
         list.addAll(someTyepOList);
     }
+
+    @Override
+    public int compareTo(Object object){
+        StorageUnit listToCompare = (StorageUnit) object;
+        return this.getSize().compareTo(listToCompare.getSize());
+    }
+
+
 
 }

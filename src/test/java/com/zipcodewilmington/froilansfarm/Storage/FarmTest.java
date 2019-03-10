@@ -1,9 +1,5 @@
 package com.zipcodewilmington.froilansfarm.Storage;
 
-import com.sun.corba.se.impl.interceptors.SlotTableStack;
-import com.zipcodewilmington.froilansfarm.Animal.AnimalFactory;
-import com.zipcodewilmington.froilansfarm.Vehicle.CropDuster;
-import com.zipcodewilmington.froilansfarm.Vehicle.Tractor;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -23,9 +19,9 @@ public class FarmTest {
         Integer expectedStables = 5;
 
 
-        Integer actualFields = farm.getFieldList();
-        Integer actualStables = farm.getHorseStableList();
-        Integer actualCoops = farm.getChickenCoopList();
+        Integer actualFields = farm.getNumberOfFields();
+        Integer actualStables = farm.getNumberOfStables();
+        Integer actualCoops = farm.getNumberOfCoops();
 
         Assert.assertNotNull(farmhouse);
         Assert.assertEquals(expectedFields, actualFields);
@@ -43,13 +39,30 @@ public class FarmTest {
         Integer expectedStables = 3;
 
 
-        Integer actualFields = farm.getFieldList();
-        Integer actualStables = farm.getHorseStableList();
-        Integer actualCoops = farm.getChickenCoopList();
+        Integer actualFields = farm.getNumberOfFields();
+        Integer actualStables = farm.getNumberOfStables();
+        Integer actualCoops = farm.getNumberOfCoops();
 
         Assert.assertNotNull(farmhouse);
         Assert.assertEquals(expectedFields, actualFields);
         Assert.assertEquals(expectedCoops,actualCoops);
         Assert.assertEquals(expectedStables,actualStables);
+    }
+
+    @Test
+    public void findLeastPopulatedChickenCoop() {
+        
+    }
+
+    @Test
+    public void findLeastPopulatedStable() {
+    }
+
+    @Test
+    public void addManyChicken() {
+    }
+
+    @Test
+    public void addManyHorse() {
     }
 }

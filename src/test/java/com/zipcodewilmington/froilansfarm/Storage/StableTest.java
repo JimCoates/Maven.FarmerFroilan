@@ -13,7 +13,7 @@ public class StableTest {
     @Test
     public void addHorse() {
         this.stable = new Stable();
-        this.horse = new Horse();
+        this.horse = Horse.createHorse();
 
         stable.addSingle(horse);
         Animal expected = horse;
@@ -26,9 +26,9 @@ public class StableTest {
     @Test
     public void getSizeTestStable() {
         this.stable = new Stable();
-        this.horse = new Horse();
-        Horse horse2 = new Horse();
-        Horse horse3 = new Horse();
+        this.horse = Horse.createHorse();
+        Horse horse2 = Horse.createHorse();
+        Horse horse3 = Horse.createHorse();
         Integer expected = 3;
 
         this.stable.addSingle(horse2);
@@ -43,9 +43,9 @@ public class StableTest {
     @Test
     public void removeHorseTest() {
         this.stable = new Stable();
-        this.horse = new Horse();
-        Horse horse2 = new Horse();
-        Horse horse3 = new Horse();
+        this.horse = Horse.createHorse();
+        Horse horse2 = Horse.createHorse();
+        Horse horse3 = Horse.createHorse();
         Integer expected = 2;
 
         this.stable.addSingle(horse2);
@@ -61,9 +61,9 @@ public class StableTest {
     @Test
     public void removeAllHorseTest() {
         this.stable = new Stable();
-        this.horse = new Horse();
-        Horse horse2 = new Horse();
-        Horse horse3 = new Horse();
+        this.horse = Horse.createHorse();
+        Horse horse2 = Horse.createHorse();
+        Horse horse3 = Horse.createHorse();
         Integer expected = 0;
 
         this.stable.addSingle(horse2);
