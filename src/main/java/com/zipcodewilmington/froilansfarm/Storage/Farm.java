@@ -3,6 +3,7 @@ package com.zipcodewilmington.froilansfarm.Storage;
 import com.zipcodewilmington.froilansfarm.Animal.AnimalFactory;
 import com.zipcodewilmington.froilansfarm.Animal.Chicken;
 import com.zipcodewilmington.froilansfarm.Animal.Horse;
+import com.zipcodewilmington.froilansfarm.Animal.Person.Person;
 import com.zipcodewilmington.froilansfarm.Vehicle.CropDuster;
 import com.zipcodewilmington.froilansfarm.Vehicle.Tractor;
 
@@ -23,7 +24,7 @@ public class Farm {
     private List<Stable> horseStableList;
 
 
-    public Farm(Integer numberFields, Integer numberStables, Integer numberCoops) {
+    public Farm(Integer numberFields, Integer numberStables, Integer numberCoops, Integer numberOfChicken, Integer numberOfHorse) {
         this.farmHouse = new FarmHouse();
         this.betty = new CropDuster();
         this.tractor = new Tractor();
@@ -31,10 +32,13 @@ public class Farm {
         this.horseStableList = setNumberStables(numberStables);
         this.chickenCoopList = setNumberCoops(numberCoops);
         this.fieldList = setNumberFields(numberFields);
+
+        addManyChicken(numberOfChicken);
+        addManyHorse(numberOfHorse);
     }
 
     public Farm() {
-        this(1,3,4);
+        this(1,3,4,15,10);
     }
 
     public FarmHouse getFarmHouse() {
@@ -59,6 +63,7 @@ public class Farm {
                 .collect(Collectors.toList());
     }
 
+
     public Integer getNumberOfFields() {
         return fieldList.size();
     }
@@ -81,6 +86,14 @@ public class Farm {
 
     public List<Stable> getHorseStableList() {
         return horseStableList;
+    }
+
+    public FarmHouse accessFarmhouse(){
+        return farmHouse;
+    }
+
+    public void addPersonToFarmHouse(Person personToAdd){
+        farmHouse.addSingle(personToAdd);
     }
 
     public ChickenCoop findLeastPopulatedChickenCoop(){

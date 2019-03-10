@@ -5,9 +5,11 @@ import com.zipcodewilmington.froilansfarm.Vehicle.Tractor;
 
 public class FarmBuilder {
 
-    private Integer numberFields;
-    private Integer numberStables;
-    private Integer numberCoops;
+    private Integer numberFields = 1;
+    private Integer numberStables = 3;
+    private Integer numberCoops = 4;
+    private Integer numberOfChicken = 15;
+    private Integer numberOfHorse = 10;
 
     public FarmBuilder setNumberFields(Integer numberFields) {
         this.numberFields = numberFields;
@@ -24,7 +26,15 @@ public class FarmBuilder {
         return this;
     }
 
+    public void setNumberOfChicken(Integer numberOfChicken) {
+        this.numberOfChicken = numberOfChicken;
+    }
+
+    public void setNumberOfHorse(Integer numberOfHorse) {
+        this.numberOfHorse = numberOfHorse;
+    }
+
     public Farm createFarm() {
-        return new Farm(numberFields, numberStables, numberCoops);
+        return new Farm(numberFields, numberStables, numberCoops,numberOfChicken,numberOfHorse);
     }
 }
