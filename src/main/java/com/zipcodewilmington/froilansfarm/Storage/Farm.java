@@ -104,9 +104,9 @@ public class Farm {
         }
 
 
-    public void addManyHorse(Integer numberOfChicken){
+    public void addManyHorse(Integer numberOfHorse){
 
-        Stream.generate(Horse::createHorse).limit(numberOfChicken)
+        Stream.generate(Horse::createHorse).limit(numberOfHorse)
                 .forEach(horse -> findLeastPopulatedStable().addSingle(horse));
 
     }

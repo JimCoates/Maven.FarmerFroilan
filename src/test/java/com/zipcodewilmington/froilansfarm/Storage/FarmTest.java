@@ -1,5 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Storage;
 
+import com.zipcodewilmington.froilansfarm.Animal.Horse;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -56,6 +57,9 @@ public class FarmTest {
 
     @Test
     public void findLeastPopulatedStable() {
+        //Given
+
+
     }
 
     @Test
@@ -64,5 +68,12 @@ public class FarmTest {
 
     @Test
     public void addManyHorse() {
+        Farm farm = new Farm();
+        farm.addManyHorse(9);
+
+        for (Stable stable: farm.getHorseStableList()) {
+            System.out.println(stable.getSize());
+        }
+
     }
 }
