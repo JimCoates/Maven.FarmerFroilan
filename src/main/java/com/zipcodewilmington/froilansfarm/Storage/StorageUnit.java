@@ -2,6 +2,7 @@ package com.zipcodewilmington.froilansfarm.Storage;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public abstract class StorageUnit <SomeType> implements Comparable {
     List<SomeType> list = new ArrayList<>();
@@ -36,6 +37,9 @@ public abstract class StorageUnit <SomeType> implements Comparable {
         return this.getSize().compareTo(listToCompare.getSize());
     }
 
-
+    Stream getStream(){
+        Stream<SomeType> stream = list.stream();
+        return stream;
+    }
 
 }

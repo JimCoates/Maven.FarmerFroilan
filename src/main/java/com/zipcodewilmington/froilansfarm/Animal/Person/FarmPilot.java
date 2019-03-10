@@ -1,10 +1,19 @@
 package com.zipcodewilmington.froilansfarm.Animal.Person;
 
+import com.zipcodewilmington.froilansfarm.Crop.Edible;
+import com.zipcodewilmington.froilansfarm.Storage.Farm;
 import com.zipcodewilmington.froilansfarm.Utils.Rideable;
 
-public class FarmPilot extends Person implements Pilot,Rider {
+import java.util.ArrayList;
+import java.util.List;
 
+public class FarmPilot extends Person implements Pilot,Rider {
+    private Farm farm;
     private Rideable riding;
+
+    public void setFarm(Farm farm) {
+        this.farm = farm;
+    }
 
     @Override
     public void mount(Rideable object) {
@@ -27,5 +36,13 @@ public class FarmPilot extends Person implements Pilot,Rider {
     @Override
     public void fly() {
 
+    }
+
+    public void eatBreakfast(){
+        List<Edible> plate = new ArrayList<>();
+        plate.addAll(farm.getEgg(2));
+        plate.addAll(farm.getCorn(2));
+        plate.addAll(farm.getTomato(1));
+        plate.forEach(super::eat);
     }
 }

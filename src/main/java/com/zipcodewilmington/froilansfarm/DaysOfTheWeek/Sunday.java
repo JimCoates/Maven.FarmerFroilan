@@ -7,6 +7,7 @@ public class Sunday extends FarmDay {
 
     @Override
     public void run(Farm farm) {
-
+        super.morningRoutine(farm);
+        
     }
 }

@@ -10,6 +10,6 @@ public class CornStorage extends StorageUnit{
     List<EarCorn> corns;
 
     public CornStorage(){
-        corns = Stream.generate(EarCorn::createCorn).limit(20).collect(Collectors.toList());
+        corns = Stream.generate(EarCorn::createCorn).limit(100).collect(Collectors.toList());
     }
 }

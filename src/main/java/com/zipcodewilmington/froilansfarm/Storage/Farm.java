@@ -1,17 +1,16 @@
 package com.zipcodewilmington.froilansfarm.Storage;
 
-import com.zipcodewilmington.froilansfarm.Animal.AnimalFactory;
 import com.zipcodewilmington.froilansfarm.Animal.Chicken;
 import com.zipcodewilmington.froilansfarm.Animal.Horse;
 import com.zipcodewilmington.froilansfarm.Animal.Person.Person;
+import com.zipcodewilmington.froilansfarm.Crop.EarCorn;
+import com.zipcodewilmington.froilansfarm.Crop.Egg;
+import com.zipcodewilmington.froilansfarm.Crop.Tomato;
 import com.zipcodewilmington.froilansfarm.Vehicle.CropDuster;
 import com.zipcodewilmington.froilansfarm.Vehicle.Tractor;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -22,12 +21,18 @@ public class Farm {
     private List<Field> fieldList;
     private List<ChickenCoop> chickenCoopList;
     private List<Stable> horseStableList;
+    private EggStorage eggStorage;
+    private CornStorage cornStorage;
+    private TomatoStorage tomatoStorage;
 
 
     public Farm(Integer numberFields, Integer numberStables, Integer numberCoops, Integer numberOfChicken, Integer numberOfHorse) {
         this.farmHouse = new FarmHouse();
         this.betty = new CropDuster();
         this.tractor = new Tractor();
+        this.eggStorage = new EggStorage();
+        this.cornStorage = new CornStorage();
+        this.tomatoStorage = new TomatoStorage();
 
         this.horseStableList = setNumberStables(numberStables);
         this.chickenCoopList = setNumberCoops(numberCoops);
@@ -35,6 +40,8 @@ public class Farm {
 
         addManyChicken(numberOfChicken);
         addManyHorse(numberOfHorse);
+        farmHouse.getFroilan().setFarm(this);
+        farmHouse.getFroilanda().setFarm(this);
     }
 
     public Farm() {
@@ -122,6 +129,45 @@ public class Farm {
         Stream.generate(Horse::createHorse).limit(numberOfHorse)
                 .forEach(horse -> findLeastPopulatedStable().addSingle(horse));
 
+    }
+
+    public List<EarCorn> getCorn(Integer numberOfCorn){//TODO - unchecked call
+        List<EarCorn> bucketOCorn = new ArrayList<>();
+        for (int i = 0; i < numberOfCorn; i++) {
+            bucketOCorn.add((EarCorn)cornStorage.get(0));
+            cornStorage.removeSingle(cornStorage.get(0));
+        }
+        return bucketOCorn;
+    }
+
+    public List<Tomato> getTomato(Integer numberOfTotmato){
+        List<Tomato> bucketOTomato = new ArrayList<>();
+        for (int i = 0; i < numberOfTotmato; i++) {
+            bucketOTomato.add((Tomato) tomatoStorage.get(0));
+            tomatoStorage.removeSingle(tomatoStorage.get(0));
+        }
+        return bucketOTomato;
+    }
+
+    public List<Egg> getEgg(Integer numberOfEggs){
+        List<Egg> basketOEggs = new ArrayList<>();
+        for (int i = 0; i < numberOfEggs; i++) {
+            basketOEggs.add((Egg) eggStorage.get(0));
+            eggStorage.removeSingle(eggStorage.get(0));
+        }
+        return basketOEggs;
+    }
+
+    public Stream<Horse> horseStream(){
+        return getHorseStableList().stream().flatMap(StorageUnit::getStream);
+    }
+
+    public Stream cropRowStream(){
+        return getFieldList().stream().flatMap(StorageUnit::getStream);
+    }
+
+    public Stream chickenStream(){
+        return getChickenCoopList().stream().flatMap(StorageUnit::getStream);
     }
 
 }

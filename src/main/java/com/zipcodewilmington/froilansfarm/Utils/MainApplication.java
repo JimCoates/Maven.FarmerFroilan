@@ -15,15 +15,6 @@ public class MainApplication {
 
     public static void main(String[] args) {
 
-        Farm froilansFarm = new Farm();
-        Person froilan = new Farmer();
-        Person froilanda = new FarmPilot();
-        froilansFarm.addPersonToFarmHouse(froilan);
-        froilansFarm.addPersonToFarmHouse(froilanda);
-
-
-
-
     }
 
 }
