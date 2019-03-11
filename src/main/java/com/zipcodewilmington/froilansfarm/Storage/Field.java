@@ -18,5 +18,9 @@ public class Field extends StorageUnit <CropRow> {
         return cropRows.get(row);
     }
 
+    public List<CropRow> getListCropRow(){
+        return this.cropRows;
+    }
+
 
 }
