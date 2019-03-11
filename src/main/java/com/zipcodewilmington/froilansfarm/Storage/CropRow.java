@@ -21,8 +21,13 @@ public class CropRow extends StorageUnit <Crop> {
         return this.cropList;
     }
 
+    public void resetCropRow(){
+        this.cropList.clear();
+    }
+
     public void addCrop(Crop crop){
         cropList.add(crop);
+
     }
 
 
