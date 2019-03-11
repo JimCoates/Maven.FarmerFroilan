@@ -21,5 +21,9 @@ public class CropRow extends StorageUnit <Crop> {
         return this.cropList;
     }
 
+    public void resetCropRow(){
+        this.cropList.clear();
+    }
+
 
 }
