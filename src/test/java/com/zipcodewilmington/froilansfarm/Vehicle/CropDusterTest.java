@@ -17,7 +17,7 @@ public class CropDusterTest {
     public void fertilize() {
         Farm farm = new Farm();
         CropDuster cropDuster = new CropDuster(farm);
-        farm.getFieldList().get(0).getCropRow(0).addCrop(new CornStalk());
+        farm.accessFarmhouse().getFroilan().plant(new CornStalk());
         Assert.assertFalse(farm.getFieldList().get(0).getCropRow(0).getCropFromCropRow(0).isFertilized());
         cropDuster.fertilize();
         Assert.assertTrue(farm.getFieldList().get(0).getCropRow(0).getCropFromCropRow(0).isFertilized());

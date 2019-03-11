@@ -9,6 +9,6 @@ public class TractorTest {
 
     @Test
     public void harvestAndClear() {
-        Farm farm = new Farm;
+        Farm farm = new Farm();
     }
 }
