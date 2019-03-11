@@ -7,7 +7,7 @@ import java.util.List;
 
 public class CropRow extends StorageUnit <Crop> {
 
-    List<Crop> cropList;
+    List<Crop> cropList = new ArrayList<>();
 
     public static CropRow createNewCropRow(){
         return new CropRow();
@@ -23,6 +23,11 @@ public class CropRow extends StorageUnit <Crop> {
 
     public void resetCropRow(){
         this.cropList.clear();
+    }
+
+    public void addCrop(Crop crop){
+        cropList.add(crop);
+
     }
 
 

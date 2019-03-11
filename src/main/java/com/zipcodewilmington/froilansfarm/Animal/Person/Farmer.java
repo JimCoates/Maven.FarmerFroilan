@@ -6,6 +6,7 @@ import com.zipcodewilmington.froilansfarm.Crop.Edible;
 import com.zipcodewilmington.froilansfarm.Crop.TomatoPlant;
 import com.zipcodewilmington.froilansfarm.Storage.CropRow;
 import com.zipcodewilmington.froilansfarm.Storage.Farm;
+import com.zipcodewilmington.froilansfarm.Storage.Field;
 import com.zipcodewilmington.froilansfarm.Utils.Rideable;
 
 import java.util.ArrayList;
@@ -27,8 +28,12 @@ public class Farmer extends Person implements Botanist,Rider {
     }
 
     @Override
-    public void plant() { //TODO after storage methods are done, complete the logic in this method
-
+    public void plant(Crop crop) { //TODO after storage methods are done, complete the logic in this method
+        for (Field field: farm.getFieldList()) {
+            for (CropRow cropRow: field.getListCropRow()) {
+                cropRow.addCrop(crop);
+            }
+        }
 
     }
 
