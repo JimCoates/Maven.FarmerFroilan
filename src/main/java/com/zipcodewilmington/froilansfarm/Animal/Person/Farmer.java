@@ -10,6 +10,7 @@ import com.zipcodewilmington.froilansfarm.Utils.Rideable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Farmer extends Person implements Botanist,Rider {

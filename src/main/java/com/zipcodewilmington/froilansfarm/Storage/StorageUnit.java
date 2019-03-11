@@ -37,7 +37,7 @@ public abstract class StorageUnit <SomeType> implements Comparable {
         return this.getSize().compareTo(listToCompare.getSize());
     }
 
-    Stream getStream(){
+    public Stream getStream(){
         Stream<SomeType> stream = list.stream();
         return stream;
     }

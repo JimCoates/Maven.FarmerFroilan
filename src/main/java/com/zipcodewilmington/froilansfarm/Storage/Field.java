@@ -14,5 +14,9 @@ public class Field extends StorageUnit <CropRow> {
                 .limit(5).collect(Collectors.toList());
     }
 
+    public CropRow getCropRow(Integer row){
+        return cropRows.get(row);
+    }
+
 
 }

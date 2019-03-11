@@ -3,6 +3,7 @@ package com.zipcodewilmington.froilansfarm.Storage;
 import com.zipcodewilmington.froilansfarm.Animal.Chicken;
 import com.zipcodewilmington.froilansfarm.Animal.Horse;
 import com.zipcodewilmington.froilansfarm.Animal.Person.Person;
+import com.zipcodewilmington.froilansfarm.Crop.Crop;
 import com.zipcodewilmington.froilansfarm.Crop.EarCorn;
 import com.zipcodewilmington.froilansfarm.Crop.Egg;
 import com.zipcodewilmington.froilansfarm.Crop.Tomato;
@@ -162,12 +163,16 @@ public class Farm {
         return getHorseStableList().stream().flatMap(StorageUnit::getStream);
     }
 
-    public Stream cropRowStream(){
+    public Stream<CropRow> cropRowStream(){
         return getFieldList().stream().flatMap(StorageUnit::getStream);
     }
 
-    public Stream chickenStream(){
+    public Stream<Chicken> chickenStream(){
         return getChickenCoopList().stream().flatMap(StorageUnit::getStream);
+    }
+
+    public Stream<Crop> cropStream() {
+            return null;
     }
 
 }
