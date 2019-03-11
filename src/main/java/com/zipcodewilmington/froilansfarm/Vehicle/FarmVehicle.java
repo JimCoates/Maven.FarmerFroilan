@@ -7,6 +7,10 @@ public abstract class FarmVehicle extends Vehicle {
 
     Farm farm;
 
+    public FarmVehicle(Farm farm) {
+        this.farm = farm;
+    }
+
     public void setFarm(Farm farm){
     this.farm = farm;
     }

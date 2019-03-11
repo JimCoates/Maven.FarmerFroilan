@@ -29,8 +29,8 @@ public class Farm {
 
     public Farm(Integer numberFields, Integer numberStables, Integer numberCoops, Integer numberOfChicken, Integer numberOfHorse) {
         this.farmHouse = new FarmHouse();
-        this.betty = new CropDuster();
-        this.tractor = new Tractor();
+        this.betty = new CropDuster(this);
+        this.tractor = new Tractor(this);
         this.eggStorage = new EggStorage();
         this.cornStorage = new CornStorage();
         this.tomatoStorage = new TomatoStorage();
@@ -160,7 +160,7 @@ public class Farm {
     }
 
     public Stream<Horse> horseStream(){
-        return getHorseStableList().stream().flatMap(StorageUnit::getStream);
+        return getHorseStableList().stream().flatMap(Stable::getStream);
     }
 
     public Stream<CropRow> cropRowStream(){
@@ -172,7 +172,8 @@ public class Farm {
     }
 
     public Stream<Crop> cropStream() {
-            return null;
+
+        return cropRowStream().flatMap(CropRow::getStream);
     }
 
 }
