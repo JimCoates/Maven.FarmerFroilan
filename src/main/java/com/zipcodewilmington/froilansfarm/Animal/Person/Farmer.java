@@ -27,15 +27,7 @@ public class Farmer extends Person implements Botanist,Rider {
         this.farm = farm;
     }
 
-    @Override
-    public void plant(Crop crop) { //TODO after storage methods are done, complete the logic in this method
-        for (Field field: farm.getFieldList()) {
-            for (CropRow cropRow: field.getListCropRow()) {
-                cropRow.addCrop(crop);
-            }
-        }
 
-    }
 
     @Override
     public void mount(Rideable object) {
@@ -73,5 +65,10 @@ public class Farmer extends Person implements Botanist,Rider {
     public void mountAndRide(Rideable object){
         riding = object;
         riding.Ride();
+    }
+
+    @Override
+    public void plant(List<Crop> cropList) {
+
     }
 }
