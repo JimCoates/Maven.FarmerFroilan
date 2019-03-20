@@ -30,4 +30,8 @@ public class CropRow extends StorageUnit <Crop> {
         cropList.add(crop);
     }
 
+    public void addListOfCrops(List<Crop> cropList){
+        cropList.addAll(cropList);
+    }
+
 }
